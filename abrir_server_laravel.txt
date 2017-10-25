@@ -1,0 +1,15 @@
+abrir servidor
+
+c:\Users\Usuario>
+
+
+c:\Users\Usuario>cd c:\wamp64\www
+
+c:\wamp64\www>cd app-shop
+
+c:\wamp64\www\app-shop>php artisan serve
+
+//con esto accedemos a la direccion para acceder a trabajar en laravel
+
+<http://127.0.0.1:8000>
+
