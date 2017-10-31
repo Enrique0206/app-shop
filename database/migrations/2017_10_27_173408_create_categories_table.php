@@ -16,9 +16,9 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id'); // se creo por defecto
 			
-			$table->string('name')->nulllable; //se ingresa tabla description, no es obligatorio (nonulloable)
-			$table->string('description')->nulllable; //se ingresa tabla description, no es obligatorio (nonulloable)
-			$table->string('image')->nullable; //se ingresa tabla imagen, no es obligatorio (nonulloable)
+			$table->string('name')->nullable(); //se ingresa tabla description, no es obligatorio (nulloable)
+			$table->string('description')->nullable(); //se ingresa tabla description, no es obligatorio (nulloable)
+			$table->string('image')->nullable(); //se ingresa tabla imagen, no es obligatorio (nulloable)
 			
             $table->timestamps(); //se creo por defecto
 			//una vez creado las tablas agregar el comando php artisan migrate
