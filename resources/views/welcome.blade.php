@@ -2,6 +2,8 @@
 
 @extends('layouts.app')
 
+@section('title', 'Bienvenido a App Shop' )
+
 @section('body-class', 'landing-page') <!--aca agregamos la seccion body-class y le damos signup-page como valor-->
 
 @section('content')<!--se copia el html de la plantilla landing-page.html y se modifica el url de imagen con un asset--->
@@ -9,8 +11,8 @@
         <div class="container">
             <div class="row">
 				<div class="col-md-6">
-					<h1 class="title">Write the best title for your page.</h1>
-	                <h4>Every landing page needs a small description after the big bold title, that's why we added this text here. Add here all the information that can make you or your product create the first impression.</h4>
+					<h1 class="title">Bienvenido a App Shop</h1>
+	                <h4>Realiza pedidos en linea y te contactaremos para coordinar la entrega</h4>
 	                <br />
 	                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-danger btn-raised btn-lg">
 						<i class="fa fa-play"></i> Watch video
@@ -25,8 +27,8 @@
 		    <div class="section text-center section-landing">
 	            <div class="row">
 	                <div class="col-md-8 col-md-offset-2">
-	                    <h2 class="title">Let's talk product</h2>
-	                    <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn't scroll to get here. Add a button if you want the user to see more.</h5>
+	                    <h2 class="title">¿Por qué?  App Shop?</h2>
+	                    <h5 class="description">Puedes revisar nuestra realcion completa de productos, comparar precios y realizar tus pedidos cuando estés seguro.</h5>
 	                </div>
 	            </div>
 
@@ -37,8 +39,8 @@
 								<div class="icon icon-primary">
 									<i class="material-icons">chat</i>
 								</div>
-								<h4 class="info-title">First Feature</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+								<h4 class="info-title">Atendemos tus dudas</h4>
+								<p>Atendemos rápidamente cualquier consulta que tengas vía chat. No estás solo sino que siempre estamos atentos a tus inquietudes.</p>
 							</div>
 		                </div>
 		                <div class="col-md-4">
@@ -46,8 +48,8 @@
 								<div class="icon icon-success">
 									<i class="material-icons">verified_user</i>
 								</div>
-								<h4 class="info-title">Second Feature</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+								<h4 class="info-title">Pago seguro</h4>
+								<p>Todo pedido que realices será confirmado a través de una llamada. Si no confías en los pagos en línea puedes pagar contra entrega el valor acordado.</p>
 							</div>
 		                </div>
 		                <div class="col-md-4">
@@ -55,8 +57,8 @@
 								<div class="icon icon-danger">
 									<i class="material-icons">fingerprint</i>
 								</div>
-								<h4 class="info-title">Third Feature</h4>
-								<p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+								<h4 class="info-title">Informacion privada</h4>
+								<p>Los pedidos que realices solo los conocerás tu a través de tu panel de usuario. Nadie más tiene acceso a esta información.</p>
 							</div>
 		                </div>
 		            </div>
@@ -72,9 +74,9 @@
 						@foreach ($products as $product) <!--abriendo doirectiva foreach-->
 						<div class="col-md-4">
 			                <div class="team-player">
-			                    <img src="../assets/img/avatar.jpg" alt="Thumbnail Image" class="img-raised img-circle">
+			                    <img src="{{ $product->images()->first()->image }}" alt="Thumbnail Image" class="img-raised img-circle">
 			                    <h4 class="title">{{ $product->name }}<br />
-									<small class="text-muted">Model</small>
+									<small class="text-muted">{{ $product->category->name }}</small>
 								</h4>
 			                    <p class="description">{{ $product->description }}</p>
 								<a href="#pablo" class="btn btn-simple btn-just-icon"><i class="fa fa-twitter"></i></a>
@@ -94,8 +96,8 @@
 	    <div class="section landing-section">
 	        <div class="row">
 	            <div class="col-md-8 col-md-offset-2">
-	                <h2 class="text-center title">Work with us</h2>
-					<h4 class="text-center description">Divide details about your product or agency work into parts. Write a few lines about each one and contact us about any further collaboration. We will responde get back to you in a couple of hours.</h4>
+	                <h2 class="text-center title">¿Aún no te has registrado?</h2>
+					<h4 class="text-center description">Regístrate ingresando tus datos básicos, y podrás realizar tus pedidos a través de nuestro carrito de compras. Si aún no te decides, de todas formas, con tu cuenta de usuario podrás hacer todas tus consultas sin compromiso.</h4>
 	                    <form class="contact-form">
 	                        <div class="row">
 	                            <div class="col-md-6">
