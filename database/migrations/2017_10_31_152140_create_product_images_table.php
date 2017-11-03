@@ -18,7 +18,7 @@ class CreateProductImagesTable extends Migration
             $table->increments('id');
 			
 			$table->string('image'); //indica el nombre del archivo o en todo caso la url del cual procede la imagen
-			$table->boolean('feature')->default(false); //se le pone un boleano paa destacar la imagen, si es nuevo true  y si no es sera false
+			$table->boolean('featured')->default(false); //se le pone un boleano paa destacar la imagen, si es nuevo true  y si no es sera false
 			
 			//fk llave foranea hacia la tabla de productos
 			$table->integer('product_id')->unsigned(); //unsigned indica obligatorio
@@ -43,4 +43,8 @@ class CreateProductImagesTable extends Migration
 /*una vez terminado aplicaremos model factories para Category y PrroductImage
 
 php artisan make:factory CategoryFactory
-php artisan make:factory ProductImageFactory */
+php artisan make:factory ProductImageFactory
+ 
+tambien realizamos la migarcion
+php artisan migrate
+ */

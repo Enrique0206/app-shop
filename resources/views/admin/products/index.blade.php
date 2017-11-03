@@ -20,6 +20,8 @@
 			<div class="team">
 				<div class="row">
 					
+					<a href="{{ url('/admin/products/create') }}" class="btn btn-primary btn-round">Nuevo Producto</a>
+					
 					<table class="table">
 						
 						<thead>
@@ -56,8 +58,9 @@
 							@endforeach
 						</tbody>
 						
-					</table>
-							
+					</table>						
+					
+					{{ $products->links() }} <!--muestra el listado de link de la paginacion-->
 			    </div>
 			</div>
 		</div>

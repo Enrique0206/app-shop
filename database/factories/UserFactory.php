@@ -1,6 +1,6 @@
 <?php
 
-use Faker\Generator as Faker;
+use Faker\Generator as Faker; //faker es un alias, en realidad la clase se llama generator
 
 /*
 |--------------------------------------------------------------------------
