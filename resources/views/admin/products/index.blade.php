@@ -41,7 +41,7 @@
 								<td class="text-center">{{ $product->id }}</td>
 								<td>{{ $product->name }}</td>
 								<td>{{ $product->description }}</td>
-								<td>{{ $product->category->name }}</td>
+								<td>{{ $product->category ? $product->category->name : 'General' }}</td> <!--si la categoria del producto existe mostra el nombre sino mostrar general-->
 								<td class="text-right">&euro; {{ $product->price }}</td>
 								<td class="td-actions text-right">
 									<button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">

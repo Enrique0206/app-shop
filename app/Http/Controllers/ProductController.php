@@ -17,12 +17,22 @@ class ProductController extends Controller
 	
 	public function create()
 	{
-		return view('admin.products.index'); //retorna el formulario (entre parentesis esta la ruta)
+		return view('admin.products.create'); //retorna el formulario (entre parentesis esta la ruta)
 	}
 	
-	public function store() //este metodo registrara el producto en la bd
+	public function store(Request $request) //este metodo registrara el producto en la bd- con el uso de la clase Request(dentro del parentesis) para registrar un producto
 	{
+		//dd($request->all()); nos permite visualizar los datos (como un tes de prueba-como echo)
+		$product = new Product();
 		
+		$product->name = $request->input('name');
+		$product->description = $request->input('description');		
+		$product->price = $request->input('price');
+		$product->long_description = $request->input('long_description');
+		
+		$product->save();
+		
+		return redirect('/admin/products'); //se define la ruta a donde redireccinar una ves enviado los datos
 	}
 }
 
