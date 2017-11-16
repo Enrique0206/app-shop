@@ -22,6 +22,7 @@ Route::get('/admin/products', 'ProductController@index'); //esta ruta mostrara e
 Route::get('/admin/products/create', 'ProductController@create'); //esta ruta permitira registrar nuevos productos' El controlador usar el metodo create
 //para guardar (registrar) haremos una peticion post a la ruta admi/products
 Route::post('/admin/products', 'ProductController@store'); //para guardar los datos usaremos el metodo sotr en el ProductController
-
+Route::get('/admin/products/{id}/edit', 'ProductController@edit');//para editar
+Route::post('/admin/products/{id}/edit', 'ProductController@update');//actualizar
 /* terminando todo esto crearemos el controlador ProductoController
 con el comando: php artisan make:controller ProductController
