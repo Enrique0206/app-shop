@@ -24,7 +24,8 @@ Route::get('/admin/products/create', 'ProductController@create'); //esta ruta pe
 Route::post('/admin/products', 'ProductController@store'); //para guardar los datos usaremos el metodo sotr en el ProductController
 Route::get('/admin/products/{id}/edit', 'ProductController@edit');//para editar
 Route::post('/admin/products/{id}/edit', 'ProductController@update');//actualizar
-Route::get('/admin/products/{id}/delete', 'ProductController@destroy');//1era forma de eliminar con get
+//Route::get('/admin/products/{id}/delete', 'ProductController@destroy');//1era forma de eliminar con get
+Route::post('/admin/products/{id}/delete', 'ProductController@destroy'); //recomendable este 2do metodo con post
 
 /* terminando todo esto crearemos el controlador ProductoController
 con el comando: php artisan make:controller ProductController
