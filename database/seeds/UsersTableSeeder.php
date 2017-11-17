@@ -17,7 +17,8 @@ class UsersTableSeeder extends Seeder
 			//vamos a copiar los parametros que necesitamos llenar de la migracion users (2014_10_12_000000_create_users_table.php)
 			'name' => 'luis enrique',
             'email' => 'luisabrigo@hotmail.com',
-            'password' => bcrypt('tecsup') //bcrypt metodo para encriptar la clave
-		]);
+            'password' => bcrypt('tecsup'), //bcrypt metodo para encriptar la clave
+			'admin' => true	//para el admin
+			]);
     }
 }
