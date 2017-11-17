@@ -51,6 +51,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+		'admin' => \App\Http\Middleware\AdminMiddleware::class, //registramos nuestro middleware para restringir el acceso por la url si no estamos registrados como admin
         'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
