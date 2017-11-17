@@ -44,24 +44,27 @@
 								<td>{{ $product->category ? $product->category->name : 'General' }}</td> <!--si la categoria del producto existe mostra el nombre sino mostrar general-->
 								<td class="text-right">&euro; {{ $product->price }}</td>
 								<td class="td-actions text-right">
-									<button type="button" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
-										<i class="fa fa-info"></i>
-									</button>
-									<a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar producto" class="btn btn-success btn-simple btn-xs">
-										<i class="fa fa-edit"></i>
-									</a>
 									
-									<!--enlace para metodo get-->
-									<!--<a href="{{ url('/admin/products/'.$product->id.'/delete') }}" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
-										<i class="fa fa-times"></i>
-									</a>-->
-									
-									<!--enlace para metodo post(el boton debe estra dentro de un formulario)-->
 									<form method="post" action="{{ url('/admin/products/'.$product->id.'/delete') }}">
-										{{ csrf_field()}}
+									{{ csrf_field()}}	
+									<a href="#" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
+											<i class="fa fa-info"></i>
+										</a>
+										<a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar producto" class="btn btn-success btn-simple btn-xs">
+											<i class="fa fa-edit"></i>
+										</a>
+									
+										<!--enlace para metodo get-->
+										<!--<a href="{{ url('/admin/products/'.$product->id.'/delete') }}" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
+											<i class="fa fa-times"></i>
+										</a>-->
+
+										<!--enlace para metodo post(el boton debe estra dentro de un formulario)-->
+									
+										
 										<button type="submit" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs">
-										<i class="fa fa-times"></i>
-									</button>
+											<i class="fa fa-times"></i>
+										</button>
 									</form>
 								</td>
 							</tr>
