@@ -63,6 +63,23 @@ class ProductController extends Controller
 	
 	public function update(Request $request, $id) 
 	{
+		//validacion al actualizar
+		$messages = [
+			'name.required' => 'es necesario ingresar un nombre para el producto.',
+			'name.min' => 'El nombre del producto debe tener al menos 3 caracteres.',
+			'description.required' => 'La descripcion corta es un campo obligatorio.',
+			'description.max' => 'La descipcion corta solo admite hasta 200 caracteres.',
+			'price.required' => 'es obligatorio definir un precio al producto.',
+			'price.numeric' => 'Ingrese un precio valido.',
+			'price.min' => 'No se admiten valores negativos.'
+		];
+		
+		$rules = [
+			'name' => 'required|min:3', //obligatorio/minimo 3 letras
+			'description' => 'required|max:200', //obligatorio/maximo 200 caracteres
+			'price' => 'required|numeric|min:0' //obligatorio/numeros minimo 0 (no negativos)
+		];
+		$this->validate($request, $rules, $messages);
 		
 		$product = Product::find($id);
 		
