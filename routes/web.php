@@ -33,5 +33,8 @@ Route::middleware(['auth', 'admin'])->group(function(){
 		/* terminando todo esto crearemos el controlador ProductoController
 		con el comando: php artisan make:controller ProductController*/
 	
+		Route::get('/admin/products/{id}/images', 'ImageController@index'); //ruta del listado de imagenes
+		Route::post('/admin/products/{id}/images', 'ImageController@store');
+		Route::post('/admin/products/{id}/images', 'ImageController@destroy');		
 });
 

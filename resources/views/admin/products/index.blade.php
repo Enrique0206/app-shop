@@ -27,9 +27,9 @@
 						<thead>
 							<tr>
 								<th class="text-center">#</th>
-								<th>Nombre</th>
-								<th>Descripcion</th>
-								<th>Categoria</th>
+								<th class="col-md-3 text-center">Nombre</th>
+								<th class="col-md-3 text-center" >Descripcion</th>
+								<th class="text-center">Categoria</th>
 								<th class="text-right">Precio</th>
 								<th class="text-right">Opciones</th>
 							</tr>
@@ -47,11 +47,15 @@
 									
 									<form method="post" action="{{ url('/admin/products/'.$product->id.'/delete') }}">
 									{{ csrf_field()}}	
-									<a href="#" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
+										<a href="#" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
 											<i class="fa fa-info"></i>
 										</a>
 										<a href="{{ url('/admin/products/'.$product->id.'/edit') }}" rel="tooltip" title="Editar producto" class="btn btn-success btn-simple btn-xs">
 											<i class="fa fa-edit"></i>
+										</a>
+									
+										<a href="{{ url('/admin/products/'.$product->id.'/images') }}" rel="tooltip" title="Imagenes del producto" class="btn btn-warning btn-simple btn-xs">
+											<i class="fa fa-image"></i>
 										</a>
 									
 										<!--enlace para metodo get-->
