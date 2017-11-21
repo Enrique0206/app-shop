@@ -16,9 +16,32 @@
 	<div class="container">
 			
 	    <div class="section text-center">
-	        <h2 class="title">Imagenes de Producto seleccionado</h2>
+	        <h2 class="title">Imagenes de Producto "{{ $product->name }}"</h2>
 		
-			<a href="{{ url('/admin/products/create') }}" class="btn btn-primary btn-round">Subir nueva imagen</a>
+			<!--creando formulario para cargar archivo-->
+			<form method="post" action=""> <!--"/admin/products/4/images". (4 es el id) ya no se agrega escribe porque el action va asumir que la peticion se va hacer a una ruta exactamente igual-->
+				{{ csrf_field() }}<!--por ser peticion post-->
+				<input type="file" name="photo" required>				
+				<button type="submit" class="btn btn-primary btn-round">Subir nueva imagen</button>
+				<a href="{{ url('/admin/products') }}" class="btn btn-default btn-round">Volver al listado de productos</a>
+			</form>
+			<!--creando formulario para cargar archivo-->
+			<hr/>
+			<!--div para imagen-->
+			<div class="row">
+				@foreach ($images as $image)
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<img src="{{ $image->image }}">
+								<button type="submit" class="btn btn-danger btn-round">Eliminar imagen</button>
+							</div>
+						</div>
+					</div>
+				@endforeach
+			</div>
+			<!--div para imagen-->
+			
 		</div>
 
 	</div>	    
