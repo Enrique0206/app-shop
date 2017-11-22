@@ -24,7 +24,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
 		//para crear un producto haremos la peticiuon get para que nos traiga el formulario para agregar el producto
 		Route::get('/admin/products/create', 'ProductController@create'); //esta ruta permitira registrar nuevos productos' El controlador usar el metodo create
 		//para guardar (registrar) haremos una peticion post a la ruta admi/products
-		Route::post('/admin/products', 'ProductController@store'); //para guardar los datos usaremos el metodo sotr en el ProductController
+		Route::post('/admin/products', 'ProductController@store'); //para guardar los datos usaremos el metodo storer en el ProductController
 		Route::get('/admin/products/{id}/edit', 'ProductController@edit');//para editar
 		Route::post('/admin/products/{id}/edit', 'ProductController@update');//actualizar
 		//Route::get('/admin/products/{id}/delete', 'ProductController@destroy');//1era forma de eliminar con get
@@ -34,7 +34,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
 		con el comando: php artisan make:controller ProductController*/
 	
 		Route::get('/admin/products/{id}/images', 'ImageController@index'); //ruta del listado de imagenes
-		Route::post('/admin/products/{id}/images', 'ImageController@store');
-		Route::post('/admin/products/{id}/images', 'ImageController@destroy');		
+		Route::post('/admin/products/{id}/images', 'ImageController@store');//ruta cuando la imagen se agrega
+		//Route::post('/admin/products/{id}/images', 'ImageController@destroy');		
 });
 

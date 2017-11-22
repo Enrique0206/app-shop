@@ -16,10 +16,10 @@
 	<div class="container">
 			
 	    <div class="section text-center">
-	        <h2 class="title">Imagenes de Producto "{{ $product->name }}"</h2>
+	        <h2 class="title">Imagenes del Producto "{{ $product->name }}"</h2>
 		
 			<!--creando formulario para cargar archivo-->
-			<form method="post" action=""> <!--"/admin/products/4/images". (4 es el id) ya no se agrega escribe porque el action va asumir que la peticion se va hacer a una ruta exactamente igual-->
+			<form method="post" action="" enctype="multipart/form-data"> <!--"/admin/products/4/images". (4 es el id) ya no se agrega escribe porque el action va asumir que la peticion se va hacer a una ruta exactamente igual-->
 				{{ csrf_field() }}<!--por ser peticion post-->
 				<input type="file" name="photo" required>				
 				<button type="submit" class="btn btn-primary btn-round">Subir nueva imagen</button>
@@ -33,7 +33,7 @@
 					<div class="col-md-4">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<img src="{{ $image->image }}">
+								<img src="{{ $image->url }}" width="250px">
 								<button type="submit" class="btn btn-danger btn-round">Eliminar imagen</button>
 							</div>
 						</div>
