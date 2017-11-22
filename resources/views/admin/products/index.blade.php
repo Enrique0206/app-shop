@@ -45,8 +45,10 @@
 								<td class="text-right">&euro; {{ $product->price }}</td>
 								<td class="td-actions text-right">
 									
-									<form method="post" action="{{ url('/admin/products/'.$product->id.'/delete') }}">
-									{{ csrf_field()}}	
+									<form method="post" action="{{ url('/admin/products/'.$product->id) }}">
+									{{ csrf_field()}}
+									{{ method_field('DELETE') }}
+									
 										<a href="#" rel="tooltip" title="Ver producto" class="btn btn-info btn-simple btn-xs">
 											<i class="fa fa-info"></i>
 										</a>

@@ -16,7 +16,7 @@
 	<div class="container">
 			
 	    <div class="section text-center">
-	        <h2 class="title">Imagenes del Producto "{{ $product->name }}"</h2>
+	        <h2 class="title">Imagenes del Producto seleccionado"{{ $product->name }}"</h2>
 		
 			<!--creando formulario para cargar archivo-->
 			<form method="post" action="" enctype="multipart/form-data"> <!--"/admin/products/4/images". (4 es el id) ya no se agrega escribe porque el action va asumir que la peticion se va hacer a una ruta exactamente igual-->
@@ -33,8 +33,14 @@
 					<div class="col-md-4">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<img src="{{ $image->url }}" width="250px">
-								<button type="submit" class="btn btn-danger btn-round">Eliminar imagen</button>
+								<img src="{{ $image->url }}" width="250px">								
+								<form method="post" action="">
+									{{ csrf_field() }}
+									{{ method_field('DELETE') }}
+									<input type="hidden" name="image_id" value="{{ $image->id }}">
+									<button type="submit" class="btn btn-danger btn-round">Eliminar imagen</button>
+								</form>
+								
 							</div>
 						</div>
 					</div>
