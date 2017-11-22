@@ -20,9 +20,9 @@ class Product extends Model
 	public function getFeaturedImageUrlAttribute() //se escribe igual que el nombmbre en la line 77de welcome.blade.php (featured_image_url)
 	{
 		$featuredImage = $this->images()->where('featured', true)->first();
-		if($featuredImage)
+		if(!$featuredImage){
 			$featuredImage = $this->images()->first();
-		
+		}
 		
 		if($featuredImage){
 			return $featuredImage->url;
