@@ -36,5 +36,7 @@ Route::middleware(['auth', 'admin'])->group(function(){
 		Route::get('/admin/products/{id}/images', 'ImageController@index'); //ruta del listado de imagenes
 		Route::post('/admin/products/{id}/images', 'ImageController@store');//ruta cuando la imagen se agrega
 		Route::delete('/admin/products/{id}/images', 'ImageController@destroy');		
+		Route::get('/admin/products/{id}/images/select/{image}', 'ImageController@select');
+		
 });
 
